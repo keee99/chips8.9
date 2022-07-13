@@ -18,6 +18,15 @@ module NavigationHelpers
       movie_name = $1
       edit_movie_path(Movie.find_by(:title => movie_name))
     
+    # part 2
+    when /^the details page for "(.*)"$/
+      movie_name = $1
+      # edit_movie_path(Movie.find_by(:title => movie_name))
+      movie_path(Movie.find_by(:title => movie_name))
+    when /^the Similar Movies page for "(.*)"$/
+      movie_name = $1
+      find_similar_movie_path(Movie.find_by(:title => movie_name))
+    
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
